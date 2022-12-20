@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<script>
+  class Animal{
+    name;
+    weight;
+    speed;
+
+    constructor(name, weight, speed) {
+      this.name = name;
+      this.weight = weight;
+      this.speed = speed;
+    }
+    getName(){
+      return this.name;
+    }
+    getWeight(){
+      return this.weight;
+    }
+    getSpeed(){
+      return this.speed;
+    }
+    setName(name){
+      this.name = name;
+    }
+    setWeight(weight){
+      this.weight = weight;
+    }
+    setSpeed(speed){
+      this.speed = speed;
+    }
+    say(message) {
+      console.log(message)
+    }
+  }
+  class  Mouse extends Animal{
+    isLive;
+
+    constructor(name, weight, speed, say, isLive) {
+      super(name, weight, speed, say);
+      this.isLive = isLive;
+    }
+    getisLive(){
+      return this.isLive;
+    }
+    setIslive(mouse){
+      this.isLive = mouse;
+    }
+  }
+  class Cat extends Animal{
+
+    constructor(name, weight, speed, say) {
+      super(name, weight, speed, say);
+    }
+    catchMouse(mouse){
+      if(super.getSpeed()){
+        console.log('bat duoc chuot')
+        mouse.setIslive(false)
+      } else {
+        console.log( 'chay nhanh vai')}
+    }
+    eatMouse(mouse){
+      console.log('nhá')
+      super.setWeight(super.getWeight+mouse.getWeight())
+      console.log('béo quá rồi' + super.getWeight())
+    }
+  }
+  let mouse = new Mouse('Jerry', 200, 30,true)
+  let mouse1 = new Mouse('jerry', 200,70,true)
+  let cat = new Cat('Tom', 2000, 50 )
+
+
+</script>
+</body>
+</html>
